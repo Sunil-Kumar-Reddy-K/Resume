@@ -1,6 +1,10 @@
 # Sunil Kumar Reddy Kalluru - Senior QA Automation Engineer
 
-👋 Hi, I’m **Sunil Kumar Reddy Kalluru**, a Senior QA Automation Engineer with over 6 years of experience in automation and manual testing. I specialize in building and optimizing test automation frameworks, ensuring software quality across industries like healthcare, insurance, and eCommerce.
+👋 Hi, I’m **Sunil Kumar Reddy Kalluru**,
+
+🎯 Senior QA Automation Engineer | Around 6 Years in Automation & Manual Testing | Expertise in Playwright, Selenium, API Testing, CI/CD | Skilled in Agile & BDD | Driving Quality & Efficiency Across Healthcare, Insurance, eCommerce, and Automotive Industries
+
+
 
 ## 📄 My Resume
 
@@ -23,4 +27,4 @@ Click [here to view my resume](https://github.com/Sunil-Kumar-Reddy-K/Resume/raw
 ## 📫 Let's Connect
 - **Email**: [kalluru.skr@gmail.com](mailto:kalluru.skr@gmail.com)
 - **LinkedIn**: [linkedin.com/in/sunil-kalluru](https://www.linkedin.com/in/sunil-kalluru)
-- **GitHub**: [github.com/Sunil-302](https://github.com/Sunil-302)
+- **GitHub**: [github.com/Sunil-Kumar-Reddy-K](https://github.com/Sunil-Kumar-Reddy-K/Resume)
