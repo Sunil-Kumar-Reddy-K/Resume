@@ -22,13 +22,18 @@ Click [here to view my resume](https://github.com/Sunil-Kumar-Reddy-K/Resume/raw
 
 ---
 
-## 🔥 Projects
+## 📦 Projects
 Here are some of the automation projects I've worked on:
 
 ### 1. **Playwright TypeScript UI & API Automation Framework**
 - **Description**: This project demonstrates my ability to build a robust test automation framework using Playwright with TypeScript. The framework covers both UI and API automation, showcasing integration and cross-functional testing capabilities.
 - **Technologies**: Playwright, TypeScript, API Testing, GitHub Actions CI/CD with Docker
 - **GitHub Repository**: [Playwright-ts_UI_and_API_Automation_framework](https://github.com/Sunil-Kumar-Reddy-K/Playwright-ts_UI_and_API_Automation_framework)
+
+### 2. **Rest Assured TestNG Automation Framework**
+- **Description**: This project showcases the development of a REST API automation framework using Rest Assured and TestNG. It demonstrates capabilities in API testing and automation, leveraging the PetStore API for comprehensive testing.
+- **Technologies**: Rest Assured, TestNG, API Testing, GitHub Actions CI/CD
+- **GitHub Repository**: [RestAssured_TestNG_Automation_framework](https://github.com/Sunil-Kumar-Reddy-K/RestAssured_TestNG_Automation_framework)
 
 ---
 
