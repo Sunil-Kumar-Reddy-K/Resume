@@ -35,7 +35,7 @@ Here are some of the automation projects I've worked on:
 - **Technologies**: Rest Assured, TestNG, API Testing, GitHub Actions CI/CD
 - **GitHub Repository**: [RestAssured_TestNG_Automation_framework](https://github.com/Sunil-Kumar-Reddy-K/RestAssured_TestNG_Automation_framework)
 
-### 3. **Selenium TestNG Automation Framework**
+### 3. **Selenium TestNG Automation Framework** { Inprogress }
 - **Description**: This project involves the creation of a Selenium automation framework using TestNG. It demonstrates capabilities in browser automation, cross-browser testing, and parallel execution, leveraging GitHub Actions for continuous integration.
 - **Technologies**: Selenium WebDriver, TestNG, Java, GitHub Actions CI/CD
 - **GitHub Repository**: [Selenium_TestNG_Automation_framework](https://github.com/Sunil-Kumar-Reddy-K/Selenium_TestNG_Automation_framework)
