@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sunil Kumar Reddy K — QA Automation Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --border: #1e1e2e;
+      --accent: #00e5a0;
+      --accent2: #5b6fff;
+      --accent3: #ff6b6b;
+      --text: #e8e8f0;
+      --muted: #6b6b80;
+      --card: #14141f;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── NOISE TEXTURE ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(10,10,15,0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 4rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,160,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,160,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,160,0.08) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      pointer-events: none;
+    }
+
+    .hero-glow2 {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,111,255,0.07) 0%, transparent 70%);
+      bottom: 0; left: 200px;
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.2s;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 32px; height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.35s;
+    }
+
+    .hero-name .highlight {
+      color: var(--accent);
+      position: relative;
+    }
+
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.5s;
+    }
+
+    .hero-title span {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-desc {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 1.5rem;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.65s;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.8s;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0a0a0f;
+      font-weight: 500;
+    }
+
+    .btn-primary:hover {
+      background: #00ffb3;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,229,160,0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.95s;
+    }
+
+    .stat-item {}
+
+    .stat-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 6rem 4rem;
+      position: relative;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      flex: 1;
+      max-width: 48px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 3rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── STACK SECTION ── */
+    .stack-section { background: var(--surface); }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .stack-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stack-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .stack-card:hover::before { transform: scaleX(1); }
+    .stack-card:hover { border-color: rgba(0,229,160,0.2); transform: translateY(-3px); }
+
+    .stack-category {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .stack-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      background: rgba(0,229,160,0.08);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,160,0.15);
+    }
+
+    .tag.blue {
+      background: rgba(91,111,255,0.08);
+      color: #8b9fff;
+      border-color: rgba(91,111,255,0.15);
+    }
+
+    .tag.red {
+      background: rgba(255,107,107,0.08);
+      color: #ff9999;
+      border-color: rgba(255,107,107,0.15);
+    }
+
+    .tag.yellow {
+      background: rgba(255,200,80,0.08);
+      color: #ffc850;
+      border-color: rgba(255,200,80,0.15);
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .project-card:hover::after { opacity: 1; }
+    .project-card:hover { border-color: rgba(0,229,160,0.2); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .project-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      background: rgba(0,229,160,0.1);
+      border: 1px solid rgba(0,229,160,0.2);
+    }
+
+    .project-status {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      letter-spacing: 0.1em;
+    }
+
+    .status-live {
+      background: rgba(0,229,160,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,160,0.2);
+    }
+
+    .status-wip {
+      background: rgba(255,200,80,0.1);
+      color: #ffc850;
+      border: 1px solid rgba(255,200,80,0.2);
+    }
+
+    .project-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      margin-top: auto;
+      transition: gap 0.2s;
+    }
+
+    .project-link:hover { gap: 0.75rem; }
+
+    /* ── INDUSTRIES ── */
+    .industries-section { background: var(--surface); }
+
+    .industries-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .industry-pill {
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      border: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+
+    .industry-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .contact-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .footer-accent { color: var(--accent); }
+
+    /* ── TERMINAL BLOCK ── */
+    .terminal {
+      background: #0d0d16;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      color: #a0a0c0;
+      max-width: 480px;
+      position: absolute;
+      right: 4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: none;
+    }
+
+    @media (min-width: 1100px) { .terminal { display: block; } }
+
+    .terminal-bar {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-r { background: #ff6b6b; }
+    .dot-y { background: #ffd93d; }
+    .dot-g { background: var(--accent); }
+
+    .terminal-line { margin-bottom: 0.3rem; }
+    .t-prompt { color: var(--accent); }
+    .t-cmd { color: var(--text); }
+    .t-out { color: #6b6b80; }
+    .t-val { color: #8b9fff; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px; height: 1em;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1rem; }
+      section, .hero { padding: 4rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .hero-stats { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">skr.dev</div>
+    <ul class="nav-links">
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://github.com/Sunil-Kumar-Reddy-K/Resume/raw/main/Sunil_kumar_reddy_K_Sr_QA_Automation_6_Years_23092024.pdf" target="_blank" class="btn btn-primary" style="padding:0.5rem 1rem; font-size:0.75rem;">Resume ↓</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+
+    <div class="hero-tag">Available for Senior SDET / Test Architect roles</div>
+    <h1 class="hero-name">Sunil Kumar<br/><span class="highlight">Reddy K.</span></h1>
+    <p class="hero-title"><span>Senior QA Automation Engineer</span> · SDET</p>
+    <p class="hero-desc">
+      6+ years building robust automation frameworks across Healthcare, Insurance, eCommerce, and Automotive. Specialising in Playwright, Selenium, API testing, and CI/CD pipelines that teams actually rely on.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects →</a>
+      <a href="https://www.linkedin.com/in/sunil-kalluru" target="_blank" class="btn btn-secondary">LinkedIn ↗</a>
+      <a href="https://github.com/Sunil-Kumar-Reddy-K/Resume/raw/main/Sunil_kumar_reddy_K_Sr_QA_Automation_6_Years_23092024.pdf" target="_blank" class="btn btn-secondary">Download CV ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">6+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Public Frameworks</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Industries</div>
+      </div>
+    </div>
+
+    <!-- Terminal Easter Egg -->
+    <div class="terminal">
+      <div class="terminal-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+      </div>
+      <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></div>
+      <div class="terminal-line t-out">→ Senior QA Automation Engineer</div>
+      <br/>
+      <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">skills --list</span></div>
+      <div class="terminal-line"><span class="t-val">playwright</span> <span class="t-out">v1.50 ✓</span></div>
+      <div class="terminal-line"><span class="t-val">selenium</span>  <span class="t-out">v4.x  ✓</span></div>
+      <div class="terminal-line"><span class="t-val">rest-assured</span> <span class="t-out">✓</span></div>
+      <div class="terminal-line"><span class="t-val">github-actions</span> <span class="t-out">✓</span></div>
+      <div class="terminal-line"><span class="t-val">docker</span>    <span class="t-out">✓</span></div>
+      <br/>
+      <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">status</span></div>
+      <div class="terminal-line t-out">→ Open to architect-level roles <span class="cursor"></span></div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="stack-section" id="stack">
+    <div class="section-label">Technical Expertise</div>
+    <h2 class="section-title reveal">The Stack</h2>
+    <div class="stack-grid reveal">
+      <div class="stack-card">
+        <div class="stack-category">UI Automation</div>
+        <div class="stack-items">
+          <span class="tag">Playwright</span>
+          <span class="tag">Selenium WebDriver</span>
+          <span class="tag">Page Object Model</span>
+          <span class="tag">BDD / Cucumber</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-category">API Testing</div>
+        <div class="stack-items">
+          <span class="tag blue">Rest Assured</span>
+          <span class="tag blue">Postman</span>
+          <span class="tag blue">TestNG</span>
+          <span class="tag blue">JSON Schema</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-category">Languages</div>
+        <div class="stack-items">
+          <span class="tag yellow">TypeScript</span>
+          <span class="tag yellow">JavaScript</span>
+          <span class="tag yellow">Java</span>
+          <span class="tag yellow">Python</span>
+          <span class="tag yellow">YAML</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-category">CI / CD & DevOps</div>
+        <div class="stack-items">
+          <span class="tag red">GitHub Actions</span>
+          <span class="tag red">Jenkins</span>
+          <span class="tag red">Docker</span>
+          <span class="tag red">AWS</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-category">Test Management</div>
+        <div class="stack-items">
+          <span class="tag">Jira</span>
+          <span class="tag">Zephyr</span>
+          <span class="tag">Xray</span>
+          <span class="tag">Agile / Scrum</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-category">Database & Cloud</div>
+        <div class="stack-items">
+          <span class="tag blue">MySQL</span>
+          <span class="tag blue">AWS</span>
+          <span class="tag blue">Docker</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">Open Source</div>
+    <h2 class="section-title reveal">Demo Frameworks</h2>
+    <div class="projects-grid reveal">
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🎭</div>
+          <span class="project-status status-live">ACTIVE</span>
+        </div>
+        <div class="project-name">Playwright TS — UI & API Framework</div>
+        <div class="project-desc">
+          End-to-end automation framework covering both UI and API layers. Built with TypeScript, Page Object Model, and GitHub Actions CI/CD with Docker containerisation.
+        </div>
+        <div class="project-tags">
+          <span class="tag">Playwright</span>
+          <span class="tag yellow">TypeScript</span>
+          <span class="tag red">GitHub Actions</span>
+          <span class="tag red">Docker</span>
+        </div>
+        <a class="project-link" href="https://github.com/Sunil-Kumar-Reddy-K/Playwright-ts_UI_and_API_Automation_framework" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🐍</div>
+          <span class="project-status status-live">ACTIVE</span>
+        </div>
+        <div class="project-name">Playwright Python + Pytest</div>
+        <div class="project-desc">
+          Python-based Playwright framework using Pytest. Demonstrates cross-language automation capability and modern Python testing patterns.
+        </div>
+        <div class="project-tags">
+          <span class="tag">Playwright</span>
+          <span class="tag yellow">Python</span>
+          <span class="tag">Pytest</span>
+        </div>
+        <a class="project-link" href="https://github.com/Sunil-Kumar-Reddy-K/playwright_python_pytest" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🔌</div>
+          <span class="project-status status-live">LIVE</span>
+        </div>
+        <div class="project-name">Rest Assured + TestNG API Framework</div>
+        <div class="project-desc">
+          REST API automation framework in Java using Rest Assured and TestNG. Comprehensive test coverage using the PetStore API with CI/CD integration.
+        </div>
+        <div class="project-tags">
+          <span class="tag blue">Rest Assured</span>
+          <span class="tag yellow">Java</span>
+          <span class="tag blue">TestNG</span>
+          <span class="tag red">GitHub Actions</span>
+        </div>
+        <a class="project-link" href="https://github.com/Sunil-Kumar-Reddy-K/RestAssured_TestNG_Automation_framework" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🔬</div>
+          <span class="project-status status-wip">IN PROGRESS</span>
+        </div>
+        <div class="project-name">Selenium TestNG Framework</div>
+        <div class="project-desc">
+          Selenium WebDriver framework with TestNG, cross-browser testing, parallel execution, and GitHub Actions integration. Actively being expanded.
+        </div>
+        <div class="project-tags">
+          <span class="tag">Selenium</span>
+          <span class="tag yellow">Java</span>
+          <span class="tag blue">TestNG</span>
+          <span class="tag red">GitHub Actions</span>
+        </div>
+        <a class="project-link" href="https://github.com/Sunil-Kumar-Reddy-K/Selenium_TestNG_Automation_framework" target="_blank">View on GitHub →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries-section">
+    <div class="section-label">Domain Experience</div>
+    <h2 class="section-title reveal">Industries</h2>
+    <div class="industries-list reveal">
+      <div class="industry-pill">🏥 Healthcare</div>
+      <div class="industry-pill">🛡️ Insurance</div>
+      <div class="industry-pill">🛒 eCommerce</div>
+      <div class="industry-pill">🚗 Automotive</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title reveal">Let's Connect</h2>
+    <div class="contact-grid reveal">
+      <a class="contact-card" href="mailto:kalluru.skr@gmail.com">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">kalluru.skr@gmail.com</div>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/sunil-kalluru" target="_blank">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">sunil-kalluru</div>
+      </a>
+      <a class="contact-card" href="https://github.com/Sunil-Kumar-Reddy-K" target="_blank">
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">Sunil-Kumar-Reddy-K</div>
+      </a>
+      <a class="contact-card" href="https://github.com/Sunil-Kumar-Reddy-K/Resume/raw/main/Sunil_kumar_reddy_K_Sr_QA_Automation_6_Years_23092024.pdf" target="_blank">
+        <div class="contact-label">Resume</div>
+        <div class="contact-value">Download PDF ↓</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-text">© 2026 <span class="footer-accent">Sunil Kumar Reddy K</span> — Built with GitHub Pages</div>
+    <div class="footer-text">Senior QA Automation Engineer · SDET</div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
