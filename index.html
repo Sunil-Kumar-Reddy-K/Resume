@@ -4,18 +4,19 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sunil Kumar Reddy K — Senior QA Automation Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://atlassian.design/tokens/charlie-display" rel="preconnect"/>
+  <style>@font-face{font-family:"Charlie Display";src:url("https://atlaskit.atlassian.com/pkg/design-system/primitives/atlassian-fonts/charlie-display-regular.woff2") format("woff2");font-weight:400;font-style:normal}@font-face{font-family:"Charlie Display";src:url("https://atlaskit.atlassian.com/pkg/design-system/primitives/atlassian-fonts/charlie-display-semibold.woff2") format("woff2");font-weight:600;font-style:normal}@font-face{font-family:"Charlie Display";src:url("https://atlaskit.atlassian.com/pkg/design-system/primitives/atlassian-fonts/charlie-display-bold.woff2") format("woff2");font-weight:700;font-style:normal}</style>
   <style>
     :root {
-      --bg:#06060f;--surface:#0c0c1c;--card:#101022;--border:#1e1e34;--border2:#2a2a48;
-      --accent:#39ff8f;--blue:#5b8fff;--purple:#a87fff;--orange:#ff9f5a;--red:#ff6b85;
-      --text:#eeeef8;--muted:#62628a;--muted2:#9898be;
-      --mono:'JetBrains Mono',monospace;--sans:'Familjen Grotesk',sans-serif;
-      --radius:12px;
+      --bg:#080810;--surface:#0e0e1a;--card:#111120;--border:#1c1c30;--border2:#252540;
+      --accent:#39ff8f;--blue:#4d7cff;--purple:#9b6dff;--orange:#ff8c42;--red:#ff5c7a;
+      --text:#e2e2f0;--muted:#5a5a7a;--muted2:#8888aa;
+      --mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif;--display:'Charlie Display','Inter',sans-serif;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;font-feature-settings:"cv01","cv03","cv04","cv11";}
     body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.011) 2px,rgba(255,255,255,0.011) 4px);pointer-events:none;z-index:999;}
 
     /* NAV */
@@ -25,7 +26,7 @@
     .nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
     .nav-links a{font-family:var(--mono);font-size:0.72rem;color:var(--muted2);text-decoration:none;letter-spacing:0.1em;transition:color 0.2s;}
     .nav-links a:hover{color:var(--accent);}
-    .nav-cta{padding:0.42rem 1.1rem!important;background:var(--accent)!important;color:var(--bg)!important;border-radius:4px;font-weight:600!important;}
+    .nav-cta{padding:0.38rem 1rem!important;background:var(--accent)!important;color:var(--bg)!important;border-radius:4px;font-weight:600!important;}
     .nav-cta:hover{opacity:0.85!important;}
 
     /* VISITOR BAR */
@@ -41,17 +42,17 @@
     .hero-left{position:relative;z-index:1;display:flex;flex-direction:column;}
 
     /* PHOTO — bigger, prominent */
-    .photo-block{display:flex;align-items:center;gap:2rem;margin-bottom:2rem;opacity:0;animation:fadeUp 0.5s ease forwards 0.1s;}
-    .hero-photo{width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:top center;border:2px solid var(--accent);box-shadow:0 0 0 6px rgba(57,255,143,0.08),0 0 32px rgba(57,255,143,0.2);flex-shrink:0;}
+    .photo-block{display:flex;align-items:center;gap:2.5rem;margin-bottom:2.25rem;opacity:0;animation:fadeUp 0.5s ease forwards 0.1s;}
+    .hero-photo{width:165px;height:165px;border-radius:50%;object-fit:cover;object-position:top center;border:2.5px solid var(--accent);box-shadow:0 0 0 9px rgba(57,255,143,0.07),0 0 48px rgba(57,255,143,0.22);flex-shrink:0;}
     .photo-meta{display:flex;flex-direction:column;gap:0.4rem;}
-    .photo-name{font-family:var(--mono);font-size:1rem;font-weight:700;color:var(--text);}
+    .photo-name{font-family:var(--display);font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:-0.01em;}
     .photo-role{font-family:var(--mono);font-size:0.72rem;color:var(--muted2);}
     .photo-status{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.65rem;color:var(--accent);background:rgba(57,255,143,0.08);border:1px solid rgba(57,255,143,0.2);padding:0.22rem 0.7rem;border-radius:20px;width:fit-content;margin-top:0.2rem;}
     .pulse-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 6px var(--accent);animation:pulse 2s ease infinite;flex-shrink:0;}
     @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
 
     /* HEADLINE */
-    .hero-headline{font-family:var(--mono);font-weight:700;font-size:clamp(1.9rem,3.8vw,3.2rem);line-height:1.18;letter-spacing:-0.03em;opacity:0;animation:fadeUp 0.5s ease forwards 0.25s;}
+    .hero-headline{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4vw,3.4rem);line-height:1.18;letter-spacing:-0.03em;opacity:0;animation:fadeUp 0.5s ease forwards 0.25s;}
     .hero-headline .hl{color:var(--accent);}
     .hero-headline .dim{color:var(--muted2);font-weight:300;font-size:0.58em;letter-spacing:0.02em;display:block;margin-top:0.4rem;}
 
@@ -64,7 +65,7 @@
     .btn-ghost{background:transparent;color:var(--muted2);border:1px solid var(--border2);}
     .btn-ghost:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px);}
     .hero-stats{display:flex;gap:3rem;margin-top:3rem;padding-top:2.25rem;border-top:1px solid var(--border);opacity:0;animation:fadeUp 0.5s ease forwards 0.7s;}
-    .stat-val{font-family:var(--mono);font-size:2rem;font-weight:700;color:var(--accent);line-height:1;}
+    .stat-val{font-family:var(--display);font-size:2.1rem;font-weight:700;color:var(--accent);line-height:1;}
     .stat-lbl{font-family:var(--mono);font-size:0.62rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.3rem;}
 
     /* TERMINAL */
@@ -84,7 +85,7 @@
     .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:0 4rem;}
     section{padding:6rem 4rem;}
     .s-eye{font-family:var(--mono);font-size:0.67rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.4rem;}
-    .s-title{font-family:var(--mono);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:2.5rem;}
+    .s-title{font-family:var(--display);font-size:clamp(1.7rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:2.5rem;}
     .s-title span{color:var(--accent);}
 
     /* SKILLS */
@@ -121,7 +122,7 @@
     .b-live{background:rgba(57,255,143,0.1);color:var(--accent);border:1px solid rgba(57,255,143,0.22);}
     .b-past{background:rgba(90,90,122,0.12);color:var(--muted2);border:1px solid var(--border2);}
     .pclient{font-family:var(--mono);font-size:0.62rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-    .pname{font-family:var(--mono);font-size:1rem;font-weight:700;letter-spacing:-0.02em;line-height:1.3;}
+    .pname{font-family:var(--display);font-size:1.05rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3;}
     .pperiod{font-family:var(--mono);font-size:0.65rem;color:var(--muted);}
     .pdesc{font-size:0.86rem;color:var(--muted2);line-height:1.75;flex:1;}
     .phighlights{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
@@ -141,8 +142,8 @@
     .cert-card:hover .cert-img-wrap img{transform:scale(1.06);}
     .cert-body{padding:1.25rem 1.4rem;display:flex;flex-direction:column;gap:0.4rem;flex:1;}
     .cert-issuer{font-family:var(--mono);font-size:0.61rem;color:var(--accent);letter-spacing:0.16em;text-transform:uppercase;font-weight:600;}
-    .cert-name{font-family:var(--mono);font-size:0.82rem;font-weight:700;line-height:1.4;color:var(--text);}
-    .cert-meta{font-family:var(--mono);font-size:0.63rem;color:var(--muted);margin-top:0.1rem;}
+    .cert-name{font-family:var(--display);font-size:0.87rem;font-weight:700;line-height:1.38;color:var(--text);}
+    .cert-meta{font-family:var(--sans);font-size:0.63rem;color:var(--muted);margin-top:0.1rem;}
     .cert-link{font-family:var(--mono);font-size:0.67rem;color:var(--blue);text-decoration:none;margin-top:0.4rem;display:inline-block;transition:color 0.2s;}
     .cert-link:hover{color:var(--accent);}
     .lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(3,3,10,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:2rem;}
@@ -159,7 +160,7 @@
     .beyond-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:all 0.25s;display:flex;flex-direction:column;gap:0.75rem;}
     .beyond-card:hover{border-color:var(--border2);transform:translateY(-3px);}
     .beyond-icon{font-size:1.8rem;}
-    .beyond-name{font-family:var(--mono);font-size:0.85rem;font-weight:700;}
+    .beyond-name{font-family:var(--display);font-size:0.9rem;font-weight:700;}
     .beyond-desc{font-size:0.82rem;color:var(--muted2);line-height:1.65;}
     .beyond-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:auto;}
 
@@ -171,7 +172,7 @@
     .tl-company{font-family:var(--mono);font-size:0.7rem;color:var(--accent);margin-top:0.25rem;}
     .tl-line{background:var(--border2);position:relative;}
     .tl-line::before{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);}
-    .tl-role{font-family:var(--mono);font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;}
+    .tl-role{font-family:var(--display);font-size:1rem;font-weight:700;margin-bottom:0.4rem;}
     .tl-desc{font-size:0.85rem;color:var(--muted2);line-height:1.75;}
 
     /* CONTACT */
@@ -438,7 +439,7 @@
 
     <div class="cert-card" onclick="openLightbox(this)">
       <div class="cert-img-wrap" style="background:#1c2333;">
-        <img src="https://pdf.ms.credential.net/badge/image?env=production&credential=ycq6325j" alt="Databricks Gen AI Badge" loading="lazy" style="object-fit:contain;padding:1.2rem;background:#1c2333;"/>
+        <img src="https://pdf.ms.credential.net/badge/image?env=production&credential=ycq6325j" alt="Databricks Gen AI" loading="lazy" style="object-fit:contain;padding:1.2rem;background:#1c2333;"/>
       </div>
       <div class="cert-body">
         <div class="cert-issuer">Databricks Academy</div>
@@ -451,7 +452,7 @@
   </div>
 </section>
 
-<!-- LIGHTBOX OVERLAY -->
+<!-- LIGHTBOX -->
 <div id="certLightbox" class="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
   <img id="lightboxImg" src="" alt="Certificate" onclick="event.stopPropagation()"/>
@@ -508,7 +509,7 @@
   <h2 class="s-title reveal">Let's <span>Connect</span></h2>
   <div class="contact-layout reveal">
     <div class="contact-links">
-      <a class="ci" href="/cdn-cgi/l/email-protection#bed5dfd2d2cbcccb90cdd5ccfed9d3dfd7d290ddd1d3"><div class="ci-lbl">email</div><div class="ci-val"><span class="__cf_email__" data-cfemail="2d464c4141585f58035e465f6d4a404c4441034e4240">[email&#160;protected]</span></div></a>
+      <a class="ci" href="mailto:kalluru.skr@gmail.com"><div class="ci-lbl">email</div><div class="ci-val">kalluru.skr@gmail.com</div></a>
       <a class="ci" href="tel:+919603916766"><div class="ci-lbl">phone</div><div class="ci-val">+91 96039 16766</div></a>
       <a class="ci" href="https://www.linkedin.com/in/sunil-kalluru" target="_blank"><div class="ci-lbl">linkedin</div><div class="ci-val">sunil-kalluru ↗</div></a>
       <a class="ci" href="https://github.com/Sunil-Kumar-Reddy-K" target="_blank"><div class="ci-lbl">github</div><div class="ci-val">Sunil-Kumar-Reddy-K ↗</div></a>
@@ -524,7 +525,7 @@
         <div class="form-group"><label class="form-label">phone <span style="color:var(--muted)">(optional)</span></label><input class="form-input" type="tel" name="phone" placeholder="+91 00000 00000"/></div>
         <div class="form-group"><label class="form-label">message <span>*</span></label><textarea class="form-textarea" name="message" placeholder="Tell me about the role or project..." required></textarea></div>
         <button type="submit" class="form-submit">send message →</button>
-        <div class="form-note">// submissions go directly to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe959f92928b8c8bd08d958cbe99939f9792d09d9193">[email&#160;protected]</a></div>
+        <div class="form-note">// submissions go directly to kalluru.skr@gmail.com</div>
         <div class="form-success" id="formSuccess">✓ Message sent! I'll get back to you soon.</div>
       </form>
     </div>
@@ -536,11 +537,16 @@
   <div class="fmono">Sr. QA Automation Engineer · <span>Open to work</span></div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*100); });
-  },{threshold:0.08});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+<script>
+  // Scroll reveal
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e, i) {
+      if (e.isIntersecting) setTimeout(function(){ e.target.classList.add('visible'); }, i * 100);
+    });
+  }, {threshold: 0.08});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  // Lightbox
   function openLightbox(card) {
     var img = card.querySelector('.cert-img-wrap img');
     if (!img) return;
@@ -552,19 +558,47 @@
     document.getElementById('certLightbox').classList.remove('active');
     document.body.style.overflow = '';
   }
-  document.addEventListener('keydown', function(e) { if(e.key==='Escape') closeLightbox(); });
-  
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
-  if (form) form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    try {
-      const res = await fetch(form.action, {method:'POST',body:data,headers:{Accept:'application/json'}});
-      if (res.ok) { success.style.display='block'; form.reset(); }
-      else { alert('Something went wrong. Please email directly.'); }
-    } catch(err) { alert('Network error. Please email directly.'); }
-  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
+  // Contact form — Formspree AJAX
+  var form = document.getElementById('contactForm');
+  var successMsg = document.getElementById('formSuccess');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('.form-submit');
+      btn.textContent = 'sending...';
+      btn.disabled = true;
+      fetch('https://formspree.io/f/mbdzkwzn', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(res) {
+        if (res.ok) {
+          successMsg.style.display = 'block';
+          form.reset();
+          btn.textContent = 'sent ✓';
+        } else {
+          res.json().then(function(data) {
+            var msg = (data.errors && data.errors.map(function(err){ return err.message; }).join(', ')) || 'Something went wrong.';
+            alert('Error: ' + msg);
+            btn.textContent = 'send message →';
+            btn.disabled = false;
+          }).catch(function() {
+            alert('Something went wrong. Please email kalluru.skr@gmail.com directly.');
+            btn.textContent = 'send message →';
+            btn.disabled = false;
+          });
+        }
+      })
+      .catch(function() {
+        alert('Network error. Please email kalluru.skr@gmail.com directly.');
+        btn.textContent = 'send message →';
+        btn.disabled = false;
+      });
+    });
+  }
 </script>
 </body>
 </html>
