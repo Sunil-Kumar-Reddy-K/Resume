@@ -1,48 +1,57 @@
-# Sunil Kumar Reddy Kalluru - Senior QA Automation Engineer
+# Hi, I'm Sunil Kumar Reddy Kalluru 👋
 
-👋 Hi, I’m **Sunil Kumar Reddy Kalluru**,
+**Senior QA Automation Engineer / SDET** — 7+ years building automation frameworks teams actually rely on.
 
-🎯 Senior QA Automation Engineer | Around 6 Years in Automation & Manual Testing | Expertise in Playwright, Selenium, API Testing, CI/CD | Skilled in Agile & BDD | Driving Quality & Efficiency Across Healthcare, Insurance, eCommerce, and Automotive Industries
+Rearchitected a 3,100-script suite down to 1,600 — **35% faster execution**, zero brittle locators. Currently automating Salesforce CPQ/CLM approval flows at **RecruitSmart**, with prior work across Insurance, Healthcare LIMS, Education, eCommerce, and Automotive.
 
-## 📄 My Resume
+📄 **[View Resume](https://github.com/Sunil-Kumar-Reddy-K/Resume/raw/main/Sunil_Kumar_Reddy_K_SDET_Resume.pdf)** &nbsp;·&nbsp; 🌐 **[Live Portfolio](https://sunil-kumar-reddy-k.github.io/Resume/)** &nbsp;·&nbsp; 💼 **[LinkedIn](https://www.linkedin.com/in/sunil-kalluru)**
 
-Click [here to view my resume](https://github.com/Sunil-Kumar-Reddy-K/Resume/raw/main/Sunil_kumar_reddy_K_Sr_QA_Automation_6_Years_17092024.pdf) to see the details of my professional journey and expertise in tools like Playwright, Selenium, API testing, and more.
-
----
-
-## 💼 Professional Skills
-- **Automation Testing**: Playwright, Selenium
-- **API Testing**: Rest-assured, Postman
-- **Programming Languages**: Java, TypeScript, JavaScript, YAML
-- **CI/CD**: Jenkins, GitHub Actions
-- **Frameworks**: Cucumber (BDD), Page Object Model (POM)
-- **Database**: MySQL (Basic)
-- **Test Management**: Jira, Zephyr, Xray
-- **Cloud & Containers**: AWS, Docker
+> The portfolio site above is the single source of truth for full project case studies, the complete skills matrix, and certifications — this README just hits the highlights.
 
 ---
 
-## 📦 Projects
-Here are some of the automation projects I've worked on:
+## ⚡ Currently
 
-### 1. **Playwright TypeScript UI & API Automation Framework**
-- **Description**: This project demonstrates my ability to build a robust test automation framework using Playwright with TypeScript. The framework covers both UI and API automation, showcasing integration and cross-functional testing capabilities.
-- **Technologies**: Playwright, TypeScript, API Testing, GitHub Actions CI/CD with Docker
-- **GitHub Repository**: [Playwright-ts_UI_and_API_Automation_framework](https://github.com/Sunil-Kumar-Reddy-K/Playwright-ts_UI_and_API_Automation_framework)
+**RecruitSmart** · Sr. QA Engineer · Nov 2024 → Present
+Conga CPQ/CLM approvals automation — full in-sprint ownership across UI, API, and E2E flows. Designed 5 GitHub Copilot Chat agents (Planner, Code-Gen, Debug, Git-Review, Clean) and a qTest-integrated Copilot workflow using Playwright MCP.
 
-### 2. **Rest Assured TestNG Automation Framework**
-- **Description**: This project showcases the development of a REST API automation framework using Rest Assured and TestNG. It demonstrates capabilities in API testing and automation, leveraging the PetStore API for comprehensive testing.
-- **Technologies**: Rest Assured, TestNG, API Testing, GitHub Actions CI/CD
-- **GitHub Repository**: [RestAssured_TestNG_Automation_framework](https://github.com/Sunil-Kumar-Reddy-K/RestAssured_TestNG_Automation_framework)
+---
 
-### 3. **Selenium TestNG Automation Framework** { Inprogress }
-- **Description**: This project involves the creation of a Selenium automation framework using TestNG. It demonstrates capabilities in browser automation, cross-browser testing, and parallel execution, leveraging GitHub Actions for continuous integration.
-- **Technologies**: Selenium WebDriver, TestNG, Java, GitHub Actions CI/CD
-- **GitHub Repository**: [Selenium_TestNG_Automation_framework](https://github.com/Sunil-Kumar-Reddy-K/Selenium_TestNG_Automation_framework)
+## 🧰 Core Stack
+
+| | |
+|---|---|
+| **Automation** | Playwright (Java, TypeScript, JavaScript), Selenium WebDriver, Protractor |
+| **API Testing** | Rest-Assured, Postman, OVH-Venom (YAML), GraphQL, Playwright API |
+| **AI-Assisted Testing** | GitHub Copilot, Anthropic Claude, MCP, Applitools Preflight |
+| **CI/CD** | GitHub Actions, Jenkins, Concourse CI, Docker, AWS |
+| **Test Management** | Jira, Zephyr Scale, Xray, qTest |
+| **Also** | axe-core (accessibility), Pact (contract testing), Gatling (performance), TestNG, BDD/Cucumber |
+| **Domains** | Salesforce CPQ/CLM · Insurance · Healthcare LIMS · Education · eCommerce · Automotive |
+
+---
+
+## 🗂️ Work History
+
+| Period | Company | Role | Focus |
+|---|---|---|---|
+| Nov 2024 → Present | **RecruitSmart** | Sr. QA Engineer | Conga CPQ/CLM — 3,100→1,600 scripts, -35% exec time, 5 Copilot agents |
+| Jun 2023 → Nov 2024 | **Trigent Software** | Sr. QA Automation Engineer | Socotra (insurance) & Tempus AI (precision medicine LIMS) |
+| Jun 2021 → May 2023 | **Adeptpros IT Solutions** | QA Engineer | ESN Sports (Shopify eCommerce) & Riverside Insights (Woodcock Johnson V) |
+| Feb 2019 → May 2021 | **SHAP Pvt Ltd** | QA Engineer | Sole QA on KIA Motors automotive portal; first Selenium automation PoC on the project |
+
+---
+
+## 📦 Open Source Frameworks
+
+Client work lives on the [portfolio site](https://sunil-kumar-reddy-k.github.io/Resume/#projects) — these are personal framework builds:
+
+- **[Playwright TS UI & API Framework](https://github.com/Sunil-Kumar-Reddy-K/Playwright-ts_UI_and_API_Automation_framework)** — Playwright + TypeScript, UI & API in one framework, GitHub Actions CI with Docker
+- **[Rest Assured + TestNG Framework](https://github.com/Sunil-Kumar-Reddy-K/RestAssured_TestNG_Automation_framework)** — REST API automation against the PetStore API, GitHub Actions CI
+- **[Selenium + TestNG Framework](https://github.com/Sunil-Kumar-Reddy-K/Selenium_TestNG_Automation_framework)** — Cross-browser + parallel execution, GitHub Actions CI
 
 ---
 
 ## 📫 Let's Connect
-- **Email**: [kalluru.skr@gmail.com](mailto:kalluru.skr@gmail.com)
-- **LinkedIn**: [linkedin.com/in/sunil-kalluru](https://www.linkedin.com/in/sunil-kalluru)
-- **GitHub**: [github.com/Sunil-Kumar-Reddy-K](https://github.com/Sunil-Kumar-Reddy-K/Resume)
+
+📧 [kalluru.skr@gmail.com](mailto:kalluru.skr@gmail.com) &nbsp;·&nbsp; 💼 [linkedin.com/in/sunil-kalluru](https://www.linkedin.com/in/sunil-kalluru) &nbsp;·&nbsp; 🐙 [github.com/Sunil-Kumar-Reddy-K](https://github.com/Sunil-Kumar-Reddy-K)
